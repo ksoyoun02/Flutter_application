@@ -1,4 +1,4 @@
-import 'package:application/screens/timer/timer.dart';
+import 'package:application/screens/timer/timer_main_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -88,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            const TimerScreen(),
+                                            const TimerMainScreen(),
                                       ));
                                 },
                                 child: const Card(
