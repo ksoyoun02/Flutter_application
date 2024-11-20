@@ -19,7 +19,7 @@ class Timeinputfomatter extends TextInputFormatter {
 
     // 길이를 4자리로 맞추기
     if (text.length > 4) {
-      text = text.replaceAll(":", "").substring(0, 4); // 4자리 이상이면 잘라냄
+      text = text.replaceAll(":", "").substring(1, 5); // 4자리 이상이면 잘라냄
     }
 
     String formattedText = text.length < 4
@@ -33,13 +33,23 @@ class Timeinputfomatter extends TextInputFormatter {
   }
 }
 
+enum TimerStatus { init, play, pause }
+
+TimerStatus timerStatus = TimerStatus.init;
+
 class _TimerScreenState extends State<TimerScreen> {
+  @override
+  void dispose() {
+    _textController.dispose();
+    super.dispose();
+  }
+
   final CountDownController _controller = CountDownController();
   final TextEditingController _textController =
       TextEditingController(text: "00:10");
-  var timerStatus = "init";
+
   bool _inputDisabled = false;
-  int _totalTime = 100;
+  int _totalTime = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -109,28 +119,40 @@ class _TimerScreenState extends State<TimerScreen> {
                         ],
                         decoration: const InputDecoration(
                           labelText: 'Timer',
-                          hintText: '00',
+                          hintText: 'MM:SS',
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 5),
-                      child: Expanded(
-                        flex: 1,
-                        child: IconButton(
-                          icon: const Icon(Icons.refresh_outlined),
-                          onPressed: () {
-                            var timeString = _textController.value.text;
-                            var timeInt =
-                                int.parse(timeString.split(":")[0]) * 60 +
-                                    int.parse(timeString.split(":")[1]);
-                            setState(() {
-                              _totalTime = timeInt;
-                            });
-                          },
-                        ),
-                      ),
-                    )
+                    Expanded(
+                      flex: 1,
+                      child: (timerStatus != TimerStatus.play &&
+                              timerStatus != TimerStatus.init)
+                          ? IconButton(
+                              icon: const Icon(Icons.refresh_outlined),
+                              onPressed: () {
+                                var timeString = _textController.value.text;
+
+                                var timeInt = 0;
+                                if (timeString.length < 5) {
+                                  timeInt = int.parse(timeString);
+                                } else {
+                                  timeInt =
+                                      int.parse(timeString.split(":")[0]) * 60 +
+                                          int.parse(timeString.split(":")[1]);
+                                }
+
+                                setState(() {
+                                  _textController.text =
+                                      "${(timeInt ~/ 60).toString().padLeft(2, "0")}:${(timeInt % 60).toString().padLeft(2, "0")}";
+                                  _totalTime = timeInt;
+                                  _controller.restart(duration: _totalTime);
+                                  timerStatus = TimerStatus.play;
+                                  _inputDisabled = true;
+                                });
+                              },
+                            )
+                          : const SizedBox.shrink(),
+                    ),
                   ],
                 ),
               ),
@@ -145,31 +167,32 @@ class _TimerScreenState extends State<TimerScreen> {
                           padding: const EdgeInsets.only(right: 10, left: 10),
                           child: FloatingActionButton(
                             heroTag: 'btn1',
-                            child: Icon((timerStatus == "init" ||
-                                    timerStatus == "pause")
+                            child: Icon((timerStatus == TimerStatus.init ||
+                                    timerStatus == TimerStatus.pause)
                                 ? Icons.play_arrow
                                 : Icons.pause),
                             onPressed: () {
-                              var status = "";
+                              TimerStatus status;
                               var inputDisabled = true;
 
                               switch (timerStatus) {
-                                case "init":
-                                  status = "play";
+                                case TimerStatus.init:
+                                  status = TimerStatus.play;
                                   inputDisabled = true;
-                                  _controller.start();
+                                  _controller.start(); // 타이머 시작
                                   break;
-                                case "play":
-                                  status = "pause";
+                                case TimerStatus.play:
+                                  status = TimerStatus.pause;
                                   inputDisabled = false;
-                                  _controller.pause();
+                                  _controller.pause(); // 타이머 일시정지
                                   break;
-                                case "pause":
-                                  status = "play";
+                                case TimerStatus.pause:
+                                  status = TimerStatus.play;
                                   inputDisabled = true;
-                                  _controller.resume();
+                                  _controller.resume(); // 타이머 재개
                                   break;
                                 default:
+                                  status = TimerStatus.init;
                               }
                               setState(() {
                                 _inputDisabled = inputDisabled;
@@ -186,7 +209,7 @@ class _TimerScreenState extends State<TimerScreen> {
                             onPressed: () {
                               _controller.reset();
                               setState(() {
-                                timerStatus = "init";
+                                timerStatus = TimerStatus.init;
                                 _inputDisabled = false;
                               });
                             },
