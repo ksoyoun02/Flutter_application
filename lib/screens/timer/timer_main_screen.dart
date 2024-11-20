@@ -1,3 +1,4 @@
+import 'package:application/screens/timer/stop_watch_screen.dart';
 import 'package:application/screens/timer/timer_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +51,7 @@ class _MyWidgetState extends State<TimerMainScreen> {
               child: TimerScreen(),
             ),
             Center(
-              child: Text("It's rainy here"),
+              child: StopWatchScreen(),
             ),
           ],
         ),

@@ -118,6 +118,7 @@ class _TimerScreenState extends State<TimerScreen> {
                           Timeinputfomatter()
                         ],
                         decoration: const InputDecoration(
+                          labelStyle: TextStyle(fontSize: 23),
                           labelText: 'Timer',
                           hintText: 'MM:SS',
                         ),
