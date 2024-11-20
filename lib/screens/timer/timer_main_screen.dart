@@ -45,7 +45,7 @@ class _MyWidgetState extends State<TimerMainScreen> {
               Navigator.pop(context);
             },
           ),
-          backgroundColor: Theme.of(context).secondaryHeaderColor,
+          backgroundColor: const Color(0xFF6F6EE4),
         ),
         body: const TabBarView(
           children: <Widget>[

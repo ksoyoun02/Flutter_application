@@ -121,13 +121,16 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
                                     second: true,
                                     milliSecond: true,
                                   );
-                                  // 리스트 길이 제한 체크
-                                  if (timerList.length >= maxListLength) {
-                                    timerList.removeAt(0); // 첫 번째 항목 삭제
-                                  }
-                                  timerList.add(displayTime);
 
-                                  _scrollToBottom();
+                                  if (displayTime != "00:00:00.00") {
+                                    // 리스트 길이 제한 체크
+                                    if (timerList.length >= maxListLength) {
+                                      timerList.removeAt(0); // 첫 번째 항목 삭제
+                                    }
+                                    timerList.add(displayTime);
+
+                                    _scrollToBottom();
+                                  }
                                 },
                               );
                             },

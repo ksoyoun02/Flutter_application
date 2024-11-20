@@ -1,4 +1,5 @@
 import 'package:application/screens/timer/timer_main_screen.dart';
+import 'package:application/widget/menu_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -79,81 +80,16 @@ class HomeScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        Row(
+                        const Row(
                           children: [
-                            Expanded(
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          const TimerMainScreen(),
-                                    ),
-                                  );
-                                },
-                                child: const Card(
-                                  margin: EdgeInsets.all(10.0),
-                                  color: Colors.white,
-                                  child: SizedBox(
-                                    height: 180,
-                                    child: Padding(
-                                      padding: EdgeInsets.all(10.0),
-                                      child: Column(
-                                        children: [
-                                          Expanded(
-                                            flex: 5,
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.end,
-                                              children: [
-                                                Icon(
-                                                  Icons.timer_sharp,
-                                                  size: 60,
-                                                  color: Color.fromARGB(
-                                                      255, 107, 105, 228),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Expanded(
-                                            flex: 3,
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  "Timer",
-                                                  style: TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.w800,
-                                                      color: Color.fromARGB(
-                                                          255, 75, 74, 160)),
-                                                )
-                                              ],
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Card(
-                                margin: const EdgeInsets.all(10.0),
-                                color: Colors.white,
-                                child: Container(
-                                  height: 180,
-                                ),
-                              ),
-                            ),
+                            MenuWidget(
+                                cardTitle: "Timer",
+                                icon: Icons.timer_sharp,
+                                linkPage: "timer"),
+                            MenuWidget(
+                                cardTitle: "Calendar",
+                                icon: Icons.calendar_month_outlined,
+                                linkPage: "Calendar"),
                           ],
                         ),
                         Row(

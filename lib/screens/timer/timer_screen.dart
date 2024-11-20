@@ -75,7 +75,7 @@ class _TimerScreenState extends State<TimerScreen> {
                           width: 200,
                           height: 200,
                           ringColor: Colors.grey[300]!,
-                          fillColor: Theme.of(context).secondaryHeaderColor,
+                          fillColor: const Color(0xFF6F6EE4),
                           backgroundColor: Colors.white,
                           strokeWidth: 10.0,
                           strokeCap: StrokeCap.round,
