@@ -85,11 +85,12 @@ class HomeScreen extends StatelessWidget {
                               child: GestureDetector(
                                 onTap: () {
                                   Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            const TimerMainScreen(),
-                                      ));
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const TimerMainScreen(),
+                                    ),
+                                  );
                                 },
                                 child: const Card(
                                   margin: EdgeInsets.all(10.0),

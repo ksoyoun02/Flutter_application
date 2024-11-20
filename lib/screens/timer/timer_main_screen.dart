@@ -27,7 +27,9 @@ class _MyWidgetState extends State<TimerMainScreen> {
           bottom: const TabBar(
             tabs: <Widget>[
               Tab(
-                icon: Icon(Icons.hourglass_bottom_rounded),
+                icon: Icon(
+                  Icons.hourglass_bottom_rounded,
+                ),
               ),
               Tab(
                 icon: Icon(Icons.timer_sharp),
