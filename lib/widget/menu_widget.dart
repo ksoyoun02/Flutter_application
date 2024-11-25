@@ -1,3 +1,4 @@
+import 'package:application/screens/blog/blog_screen.dart';
 import 'package:application/screens/calendar/calendar_main_screen.dart';
 import 'package:application/screens/timer/timer_main_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,8 @@ class MenuWidget extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) {
                 switch (linkPage) {
+                  case "blog":
+                    return const BlogScreen();
                   case "Timer":
                     return const TimerMainScreen();
                   case "Calendar":

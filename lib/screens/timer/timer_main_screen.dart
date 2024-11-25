@@ -24,6 +24,7 @@ class _MyWidgetState extends State<TimerMainScreen> {
               fontWeight: FontWeight.bold,
             ),
           ),
+          centerTitle: true,
           bottom: const TabBar(
             tabs: <Widget>[
               Tab(
