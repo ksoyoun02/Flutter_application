@@ -1,4 +1,3 @@
-import 'package:application/screens/timer/timer_main_screen.dart';
 import 'package:application/widget/menu_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -62,53 +61,62 @@ class HomeScreen extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: Color(0xFF6F6EE4),
               ),
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white70,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
+              child: SingleChildScrollView(
+                child: Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white70,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
+                    ),
                   ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 10.0,
-                    right: 10.0,
-                    top: 15.0,
-                    bottom: 0.0,
-                  ),
-                  child: Column(
-                    children: [
-                      const Row(
-                        children: [
-                          MenuWidget(
-                              cardTitle: "Blog",
-                              icon: Icons.web_rounded,
-                              linkPage: "blog"),
-                          MenuWidget(
-                              cardTitle: "Timer",
-                              icon: Icons.timer_sharp,
-                              linkPage: "timer"),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          const MenuWidget(
-                              cardTitle: "Calendar",
-                              icon: Icons.calendar_month_outlined,
-                              linkPage: "Calendar"),
-                          Expanded(
-                            child: Card(
-                              margin: const EdgeInsets.all(10.0),
-                              color: Colors.white,
-                              child: Container(
-                                height: 180,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                  child: const Padding(
+                    padding: EdgeInsets.only(
+                      left: 10.0,
+                      right: 10.0,
+                      top: 15.0,
+                      bottom: 0.0,
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            MenuWidget(
+                                cardTitle: "Blog",
+                                icon: Icons.web_rounded,
+                                linkPage: "blog"),
+                            MenuWidget(
+                                cardTitle: "Img",
+                                icon: Icons.image_outlined,
+                                linkPage: "img"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            MenuWidget(
+                                cardTitle: "D-day",
+                                icon: Icons.favorite_border,
+                                linkPage: "dday"),
+                            MenuWidget(
+                                cardTitle: "Calendar",
+                                icon: Icons.calendar_month_outlined,
+                                linkPage: "calendar"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            MenuWidget(
+                                cardTitle: "Timer",
+                                icon: Icons.timer_sharp,
+                                linkPage: "timer"),
+                            MenuWidget(
+                                cardTitle: "Calendar",
+                                icon: Icons.calendar_month_outlined,
+                                linkPage: "calendar"),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

@@ -1,5 +1,7 @@
 import 'package:application/screens/blog/blog_screen.dart';
 import 'package:application/screens/calendar/calendar_main_screen.dart';
+import 'package:application/screens/d_day/d_day_screen.dart';
+import 'package:application/screens/img/img_screen.dart';
 import 'package:application/screens/timer/timer_main_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -27,13 +29,17 @@ class MenuWidget extends StatelessWidget {
                 switch (linkPage) {
                   case "blog":
                     return const BlogScreen();
-                  case "Timer":
+                  case "img":
+                    return const ImgScreen();
+                  case "dday":
+                    return const DDayScreen();
+                  case "timer":
                     return const TimerMainScreen();
-                  case "Calendar":
+                  case "calendar":
                     return const CalendarMainScreen();
                   // value1에 해당하는 실행 코드
                   default:
-                    return const TimerMainScreen();
+                    return const BlogScreen();
                   // 위의 case에 모두 해당하지 않을 때 실행할 코드
                 }
               },
@@ -44,7 +50,7 @@ class MenuWidget extends StatelessWidget {
           margin: const EdgeInsets.all(10.0),
           color: Colors.white,
           child: SizedBox(
-            height: 180,
+            height: 130,
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Column(
