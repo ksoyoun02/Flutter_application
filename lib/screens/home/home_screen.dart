@@ -98,8 +98,8 @@ class HomeScreen extends StatelessWidget {
                                 icon: Icons.favorite_border,
                                 linkPage: "dday"),
                             MenuWidget(
-                                cardTitle: "Calendar",
-                                icon: Icons.calendar_month_outlined,
+                                cardTitle: "Dice",
+                                icon: Icons.favorite_border,
                                 linkPage: "calendar"),
                           ],
                         ),

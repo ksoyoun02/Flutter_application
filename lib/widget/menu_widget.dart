@@ -1,6 +1,7 @@
 import 'package:application/screens/blog/blog_screen.dart';
 import 'package:application/screens/calendar/calendar_main_screen.dart';
 import 'package:application/screens/d_day/d_day_screen.dart';
+import 'package:application/screens/dice/dice_screen.dart';
 import 'package:application/screens/img/img_screen.dart';
 import 'package:application/screens/timer/timer_main_screen.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,8 @@ class MenuWidget extends StatelessWidget {
                     return const ImgScreen();
                   case "dday":
                     return const DDayScreen();
+                  case "dice":
+                    return const DiceScreen();
                   case "timer":
                     return const TimerMainScreen();
                   case "calendar":
