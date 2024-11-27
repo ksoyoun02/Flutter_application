@@ -1,21 +1,23 @@
 import 'package:application/screens/blog/blog_screen.dart';
 import 'package:application/screens/calendar/calendar_main_screen.dart';
 import 'package:application/screens/d_day/d_day_screen.dart';
-import 'package:application/screens/dice/dice_screen.dart';
+import 'package:application/screens/dice/dice_main_screen.dart';
 import 'package:application/screens/img/img_screen.dart';
 import 'package:application/screens/timer/timer_main_screen.dart';
 import 'package:flutter/material.dart';
 
 class MenuWidget extends StatelessWidget {
   final String cardTitle;
-  final IconData icon;
+  final IconData? iconData; // IconData 타입을 nullable로 받기
+  final Icon? icon;
   final String linkPage;
 
   const MenuWidget({
     super.key,
     required this.cardTitle,
-    required this.icon,
     required this.linkPage,
+    this.icon,
+    this.iconData,
   });
 
   @override
@@ -35,7 +37,7 @@ class MenuWidget extends StatelessWidget {
                   case "dday":
                     return const DDayScreen();
                   case "dice":
-                    return const DiceScreen();
+                    return const DiceMainScreen();
                   case "timer":
                     return const TimerMainScreen();
                   case "calendar":
@@ -64,11 +66,17 @@ class MenuWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Icon(
-                          icon,
-                          size: 60,
-                          color: const Color.fromARGB(255, 107, 105, 228),
-                        ),
+                        icon != null
+                            ? Padding(
+                                padding: const EdgeInsets.only(right: 15),
+                                child: icon!,
+                              ) // Icon이 전달된 경우
+                            : Icon(
+                                // IconData가 전달된 경우
+                                iconData,
+                                size: 60,
+                                color: const Color.fromARGB(255, 107, 105, 228),
+                              ),
                       ],
                     ),
                   ),

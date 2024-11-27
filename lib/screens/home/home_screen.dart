@@ -1,5 +1,6 @@
 import 'package:application/widget/menu_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -83,11 +84,11 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             MenuWidget(
                                 cardTitle: "Blog",
-                                icon: Icons.web_rounded,
+                                iconData: Icons.web_rounded,
                                 linkPage: "blog"),
                             MenuWidget(
                                 cardTitle: "Img",
-                                icon: Icons.image_outlined,
+                                iconData: Icons.image_outlined,
                                 linkPage: "img"),
                           ],
                         ),
@@ -95,23 +96,27 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             MenuWidget(
                                 cardTitle: "D-day",
-                                icon: Icons.favorite_border,
+                                iconData: Icons.favorite_border,
                                 linkPage: "dday"),
                             MenuWidget(
                                 cardTitle: "Dice",
-                                icon: Icons.favorite_border,
-                                linkPage: "calendar"),
+                                icon: Icon(
+                                  FontAwesomeIcons.dice,
+                                  size: 60,
+                                  color: Color.fromARGB(255, 107, 105, 228),
+                                ),
+                                linkPage: "dice"),
                           ],
                         ),
                         Row(
                           children: [
                             MenuWidget(
                                 cardTitle: "Timer",
-                                icon: Icons.timer_sharp,
+                                iconData: Icons.timer_sharp,
                                 linkPage: "timer"),
                             MenuWidget(
                                 cardTitle: "Calendar",
-                                icon: Icons.calendar_month_outlined,
+                                iconData: Icons.calendar_month_outlined,
                                 linkPage: "calendar"),
                           ],
                         ),
