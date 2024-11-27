@@ -15,7 +15,7 @@ class DiceMainScreen extends StatefulWidget {
 class _DiceMainScreenState extends State<DiceMainScreen>
     with TickerProviderStateMixin {
   TabController? controller;
-  double threshold = 2.7;
+  double threshold = 2.0;
   int number = 1;
   ShakeDetector? shakeDetector;
 
@@ -64,7 +64,7 @@ class _DiceMainScreenState extends State<DiceMainScreen>
 
   List<Widget> renderChildren() {
     return [
-      const DiceScreen(number: 1),
+      DiceScreen(number: number),
       DiceSettingScreen(
         threshold: threshold,
         onThresholdChange: onThresholdChange,
