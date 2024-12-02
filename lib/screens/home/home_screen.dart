@@ -111,6 +111,18 @@ class HomeScreen extends StatelessWidget {
                         Row(
                           children: [
                             MenuWidget(
+                                cardTitle: "Video",
+                                iconData: Icons.videocam,
+                                linkPage: "video"),
+                            MenuWidget(
+                                cardTitle: "Calendar",
+                                iconData: Icons.calendar_month_outlined,
+                                linkPage: "calendar"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            MenuWidget(
                                 cardTitle: "Timer",
                                 iconData: Icons.timer_sharp,
                                 linkPage: "timer"),
