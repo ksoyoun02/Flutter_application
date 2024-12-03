@@ -1,7 +1,9 @@
 import 'package:application/screens/blog/blog_screen.dart';
 import 'package:application/screens/calendar/calendar_main_screen.dart';
+import 'package:application/screens/choolCheck/chool_check_screen.dart';
 import 'package:application/screens/d_day/d_day_screen.dart';
 import 'package:application/screens/dice/dice_main_screen.dart';
+import 'package:application/screens/imageEditor/image_editor_screen.dart';
 import 'package:application/screens/img/img_screen.dart';
 import 'package:application/screens/timer/timer_main_screen.dart';
 import 'package:application/screens/video/video_screen.dart';
@@ -41,6 +43,10 @@ class MenuWidget extends StatelessWidget {
                     return const DiceMainScreen();
                   case "video":
                     return const VideoScreen();
+                  case "choolCheck":
+                    return const ChoolCheckScreen();
+                  case "imageEditor":
+                    return const ImageEditorScreen();
                   case "timer":
                     return const TimerMainScreen();
                   case "calendar":
