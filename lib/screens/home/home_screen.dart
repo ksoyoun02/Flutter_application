@@ -127,9 +127,17 @@ class HomeScreen extends StatelessWidget {
                                 iconData: Icons.switch_account,
                                 linkPage: "imageEditor"),
                             MenuWidget(
-                                cardTitle: "Map Check",
-                                iconData: Icons.gps_fixed_outlined,
-                                linkPage: "choolCheck"),
+                                cardTitle: "Youtube",
+                                iconData: Icons.ondemand_video,
+                                linkPage: "youtube"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            MenuWidget(
+                                cardTitle: "Scheduler",
+                                iconData: Icons.calendar_month_outlined,
+                                linkPage: "calendarScheduler"),
                           ],
                         ),
                         Row(

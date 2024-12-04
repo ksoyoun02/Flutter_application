@@ -1,5 +1,6 @@
 import 'package:application/screens/blog/blog_screen.dart';
 import 'package:application/screens/calendar/calendar_main_screen.dart';
+import 'package:application/screens/calendar/calendar_scheduler_screen.dart';
 import 'package:application/screens/choolCheck/chool_check_screen.dart';
 import 'package:application/screens/d_day/d_day_screen.dart';
 import 'package:application/screens/dice/dice_main_screen.dart';
@@ -7,6 +8,7 @@ import 'package:application/screens/imageEditor/image_editor_screen.dart';
 import 'package:application/screens/img/img_screen.dart';
 import 'package:application/screens/timer/timer_main_screen.dart';
 import 'package:application/screens/video/video_screen.dart';
+import 'package:application/screens/youtube/youtube_screen.dart';
 import 'package:flutter/material.dart';
 
 class MenuWidget extends StatelessWidget {
@@ -47,6 +49,10 @@ class MenuWidget extends StatelessWidget {
                     return const ChoolCheckScreen();
                   case "imageEditor":
                     return const ImageEditorScreen();
+                  case "youtube":
+                    return const YoutubeScreen();
+                  case "calendarScheduler":
+                    return const CalendarSchedulerScreen();
                   case "timer":
                     return const TimerMainScreen();
                   case "calendar":
