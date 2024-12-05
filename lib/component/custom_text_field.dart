@@ -28,7 +28,7 @@ class CustomTextField extends StatelessWidget {
         ),
         TextFormField(
           cursorColor: Colors.grey,
-          maxLines: isTime || oneLow ? 1 : null,
+          maxLines: isTime || oneLow ? 1 : 5,
           keyboardType: isTime ? TextInputType.number : TextInputType.multiline,
           inputFormatters:
               isTime ? [FilteringTextInputFormatter.digitsOnly] : [],
@@ -38,7 +38,7 @@ class CustomTextField extends StatelessWidget {
             fillColor: Colors.grey[300],
             suffixText: isTime ? '시' : null,
           ),
-        ),
+        )
       ],
     );
   }

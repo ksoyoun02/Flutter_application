@@ -20,74 +20,84 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
         child: Padding(
           padding:
               EdgeInsets.only(left: 8, right: 8, top: 8, bottom: bottonInset),
-          child: Column(
-            children: [
-              const CustomTextField(
-                label: '일정제목',
-                isTime: false,
-                oneLow: true,
-              ),
-              const SizedBox(
-                height: 8.0,
-              ),
-              const CustomTextField(
-                label: '일자',
-                isTime: false,
-                oneLow: true,
-              ),
-              const SizedBox(
-                height: 8.0,
-              ),
-              const Row(
-                children: [
-                  Expanded(
-                    child: CustomTextField(
-                      label: '시작시간',
-                      isTime: true,
-                    ),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const Text(
+                  "일정등록",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 15,
                   ),
-                  SizedBox(
-                    width: 16.0,
-                  ),
-                  Expanded(
-                    child: CustomTextField(
-                      label: '종료시간',
-                      isTime: true,
+                ),
+                const SizedBox(
+                  height: 8.0,
+                ),
+                const CustomTextField(
+                  label: '일정제목',
+                  isTime: false,
+                  oneLow: true,
+                ),
+                const SizedBox(
+                  height: 8.0,
+                ),
+                const CustomTextField(
+                  label: '일자',
+                  isTime: false,
+                  oneLow: true,
+                ),
+                const SizedBox(
+                  height: 8.0,
+                ),
+                const Row(
+                  children: [
+                    Expanded(
+                      child: CustomTextField(
+                        label: '시작시간',
+                        isTime: true,
+                      ),
                     ),
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 8.0,
-              ),
-              const CustomTextField(
-                label: '장소',
-                isTime: false,
-                oneLow: true,
-              ),
-              const SizedBox(
-                height: 8.0,
-              ),
-              const Expanded(
-                child: CustomTextField(
+                    SizedBox(
+                      width: 16.0,
+                    ),
+                    Expanded(
+                      child: CustomTextField(
+                        label: '종료시간',
+                        isTime: true,
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 8.0,
+                ),
+                const CustomTextField(
+                  label: '장소',
+                  isTime: false,
+                  oneLow: true,
+                ),
+                const SizedBox(
+                  height: 8.0,
+                ),
+                const CustomTextField(
                   label: '내용',
                   isTime: false,
                 ),
-              ),
-              const SizedBox(
-                height: 8.0,
-              ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: onSaveButton,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: PRIMARY_COLOR,
-                  ),
-                  child: const Text('저장'),
+                const SizedBox(
+                  height: 8.0,
                 ),
-              )
-            ],
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: onSaveButton,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: PRIMARY_COLOR,
+                    ),
+                    child: const Text('저장'),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

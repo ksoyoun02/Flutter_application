@@ -21,6 +21,13 @@ class _CalendarSchedulerScreenState extends State<CalendarSchedulerScreen> {
   );
 
   @override
+  void initState() {
+    super.initState();
+
+    onDaySelected(selectedDate, selectedDate);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
@@ -30,10 +37,17 @@ class _CalendarSchedulerScreenState extends State<CalendarSchedulerScreen> {
             context: context,
             isDismissible: true,
             isScrollControlled: true,
-            builder: (context) {
-              return const FractionallySizedBox(
-                heightFactor: 0.7, // 화면 높이의 80%
-                child: ScheduleBottomSheet(),
+            builder: (_) {
+              return FractionallySizedBox(
+                heightFactor: 0.7, // 화면 높이의 70%로 설정
+                child: Container(
+                  color: Colors.white,
+                  child: const Padding(
+                    padding:
+                        EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 8),
+                    child: ScheduleBottomSheet(),
+                  ),
+                ),
               );
             },
           );
@@ -52,12 +66,58 @@ class _CalendarSchedulerScreenState extends State<CalendarSchedulerScreen> {
             ),
             TodayBanner(selectedDate: selectedDate, count: 0),
             const SizedBox(
-              height: 8.0,
+              height: 5.0,
             ),
-            const ScheduleCard(
-              startTime: 12,
-              endTime: 14,
-              content: 'content',
+            const Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ScheduleCard(
+                      startTime: 12,
+                      endTime: 14,
+                      content: 'content',
+                    ),
+                    ScheduleCard(
+                      startTime: 12,
+                      endTime: 14,
+                      content: 'content',
+                    ),
+                    ScheduleCard(
+                      startTime: 12,
+                      endTime: 14,
+                      content: 'content',
+                    ),
+                    ScheduleCard(
+                      startTime: 12,
+                      endTime: 14,
+                      content: 'content',
+                    ),
+                    ScheduleCard(
+                      startTime: 12,
+                      endTime: 14,
+                      content: 'content',
+                    ),
+                    ScheduleCard(
+                      startTime: 12,
+                      endTime: 14,
+                      content: 'content',
+                    ),
+                    ScheduleCard(
+                      startTime: 12,
+                      endTime: 14,
+                      content: 'content',
+                    ),
+                    ScheduleCard(
+                      startTime: 12,
+                      endTime: 14,
+                      content: 'content',
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 5.0,
             ),
           ],
         ),
