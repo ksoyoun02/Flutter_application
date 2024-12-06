@@ -55,8 +55,8 @@ class MenuWidget extends StatelessWidget {
                     return const CalendarSchedulerScreen();
                   case "timer":
                     return const TimerMainScreen();
-                  case "calendar":
-                    return const CalendarMainScreen();
+                  //case "calendar":
+                  // return const CalendarMainScreen();
                   // value1에 해당하는 실행 코드
                   default:
                     return const BlogScreen();

@@ -62,6 +62,17 @@ class MainCalender extends StatelessWidget {
           color: PRIMARY_COLOR,
         ),
       ),
+      daysOfWeekStyle: const DaysOfWeekStyle(
+        weekdayStyle: TextStyle(
+          fontWeight: FontWeight.w600,
+          fontSize: 12.0, // 글꼴 크기 조정
+        ),
+        weekendStyle: TextStyle(
+          fontWeight: FontWeight.w600,
+          fontSize: 12.0, // 글꼴 크기 조정
+          color: Colors.red, // 주말 색상 설정
+        ),
+      ),
     );
   }
 }

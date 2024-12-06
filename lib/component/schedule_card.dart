@@ -2,15 +2,15 @@ import 'package:application/const/colors.dart';
 import 'package:flutter/material.dart';
 
 class ScheduleCard extends StatelessWidget {
-  final int startTime;
-  final int endTime;
-  final String content;
+  final String startTime;
+  final String endTime;
+  final String title;
 
   const ScheduleCard({
     super.key,
     required this.startTime,
     required this.endTime,
-    required this.content,
+    required this.title,
   });
 
   @override
@@ -34,7 +34,7 @@ class ScheduleCard extends StatelessWidget {
               const SizedBox(
                 width: 16.0,
               ),
-              _Content(contents: content),
+              _Content(contents: title),
               const SizedBox(
                 width: 16.0,
               )
@@ -47,8 +47,8 @@ class ScheduleCard extends StatelessWidget {
 }
 
 class _Time extends StatelessWidget {
-  final int startTime;
-  final int endTime;
+  final String startTime;
+  final String endTime;
 
   const _Time({
     super.key,
@@ -68,11 +68,11 @@ class _Time extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '${startTime.toString().padLeft(2, '0')}:00',
+          startTime,
           style: textStyle,
         ),
         Text(
-          '${endTime.toString().padLeft(2, '0')}:00',
+          '~ $endTime',
           style: textStyle.copyWith(
             fontSize: 10.0,
           ),

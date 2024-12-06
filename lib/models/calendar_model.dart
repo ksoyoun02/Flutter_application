@@ -6,8 +6,6 @@ class CalendarModel {
   String? endTime;
   String? description;
   String? location;
-  DateTime? createdAt;
-  DateTime? updatedAt;
 
   CalendarModel({
     this.id,
@@ -17,21 +15,19 @@ class CalendarModel {
     this.endTime,
     this.description,
     this.location,
-    this.createdAt,
-    this.updatedAt,
   });
 
   // JSON 데이터를 모델로 변환하는 생성자
   CalendarModel.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         title = json['title'],
-        eventDate = DateTime.parse(json['event_DATE']),
-        startTime = json['start_TIME'],
-        endTime = json['end_TIME'],
+        eventDate = json['event_DATE'] != null
+            ? DateTime.parse(json['event_DATE'])
+            : null,
+        startTime = json['start_TIME'].toString().substring(0, 5),
+        endTime = json['end_TIME'].toString().substring(0, 5),
         description = json['description'],
-        location = json['location'],
-        createdAt = DateTime.parse(json['created_AT']),
-        updatedAt = DateTime.parse(json['updated_AT']);
+        location = json['location'];
 
   // 모델 데이터를 JSON으로 변환
   Map<String, dynamic> toJson() {
@@ -43,8 +39,6 @@ class CalendarModel {
       'end_TIME': endTime,
       'description': description,
       'location': location,
-      'created_AT': createdAt?.toIso8601String(),
-      'updated_AT': updatedAt?.toIso8601String(),
     };
   }
 }
