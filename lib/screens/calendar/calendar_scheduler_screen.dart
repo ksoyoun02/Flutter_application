@@ -60,10 +60,12 @@ class _CalendarSchedulerScreenState extends State<CalendarSchedulerScreen> {
                 heightFactor: 0.7, // 화면 높이의 70%로 설정
                 child: Container(
                   color: Colors.white,
-                  child: const Padding(
-                    padding:
-                        EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 8),
-                    child: ScheduleBottomSheet(),
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        left: 8, right: 8, top: 8, bottom: 8),
+                    child: ScheduleBottomSheet(
+                      eventDate: selectedDate,
+                    ),
                   ),
                 ),
               );

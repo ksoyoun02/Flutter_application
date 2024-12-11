@@ -3,7 +3,12 @@ import 'package:application/const/colors.dart';
 import 'package:flutter/material.dart';
 
 class ScheduleBottomSheet extends StatefulWidget {
-  const ScheduleBottomSheet({super.key});
+  final DateTime eventDate;
+
+  const ScheduleBottomSheet({
+    super.key,
+    required this.eventDate,
+  });
 
   @override
   State<ScheduleBottomSheet> createState() => _ScheduleBottomSheetState();
@@ -41,11 +46,12 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
                 const SizedBox(
                   height: 8.0,
                 ),
-                const CustomTextField(
-                  label: '일자',
-                  isTime: false,
-                  oneLow: true,
-                ),
+                CustomTextField(
+                    label: '일자',
+                    isTime: false,
+                    oneLow: true,
+                    eventDate: widget.eventDate,
+                    isDisabled: true),
                 const SizedBox(
                   height: 8.0,
                 ),
