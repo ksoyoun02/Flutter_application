@@ -1,6 +1,7 @@
 import 'package:application/const/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 
 class CustomTextField extends StatefulWidget {
   final String label;
@@ -25,6 +26,66 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
+  final FocusNode _focusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    _focusNode.addListener(_onFocusChange);
+  }
+
+  @override
+  void dispose() {
+    _focusNode.removeListener(_onFocusChange);
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  void _onFocusChange() {
+    if (!_focusNode.hasFocus && widget.isTime) {
+      _formatTime();
+    }
+  }
+
+  void _formatTime() {
+    String text = widget.controller?.text.replaceAll(':', '') ?? '';
+
+    if (text.isEmpty) {
+      text = '0000';
+    } else {
+      text = text.padLeft(4, '0');
+    }
+
+    text = '${text.substring(0, 2)}:${text.substring(2)}';
+
+    if (!isValidTimeFormat(text)) {
+      _showAlertDialog('잘못된 시간 형식입니다. 다시 입력해주세요');
+      widget.controller?.clear();
+    } else {
+      widget.controller?.text = text;
+      widget.controller?.selection =
+          TextSelection.collapsed(offset: text.length);
+    }
+  }
+
+  void _showAlertDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('알림'),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('확인'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,6 +100,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
         TextFormField(
           controller: widget.controller,
+          focusNode: _focusNode,
           cursorColor: Colors.grey,
           maxLines: widget.isTime || widget.oneLow ? 1 : 5,
           keyboardType:
@@ -47,51 +109,18 @@ class _CustomTextFieldState extends State<CustomTextField> {
               ? [
                   FilteringTextInputFormatter.digitsOnly,
                   LengthLimitingTextInputFormatter(5),
-                  TimeFormatter()
+                  TimeFormatter(),
                 ]
               : [],
           decoration: InputDecoration(
             border: InputBorder.none,
             filled: true,
             fillColor: Colors.grey[300],
-            suffixText: widget.isTime ? '시' : null,
           ),
-          enabled: !widget.isDisabled!,
-          onEditingComplete: () {
-            if (widget.isTime) {
-              _formatTime();
-            }
-          },
-        )
+          enabled: widget.isDisabled != true,
+        ),
       ],
     );
-  }
-
-  // 포커스가 풀릴 때 시간 형식으로 수정하는 함수
-  void _formatTime() {
-    String text = widget.controller?.text ?? '';
-
-    // 1자리 숫자일 경우 앞에 '0' 추가
-    if (text.length == 1) {
-      text = '0$text';
-    }
-
-    // 2자리 숫자만 입력되면 :을 추가하여 HH:MM 형식으로
-    if (text.length == 2 && !text.contains(':')) {
-      text = '${text.substring(0, 2)}:${text.substring(2)}';
-    }
-
-    // 3자리 숫자라면 두 번째 `:` 뒤에 0을 추가하여 HH:MM 형식으로 완성
-    if (text.length == 3) {
-      text = '${text}0';
-    }
-
-    // 형식에 맞게 텍스트 업데이트
-    if (widget.controller != null) {
-      widget.controller!.text = text;
-      widget.controller!.selection =
-          TextSelection.collapsed(offset: text.length);
-    }
   }
 }
 
@@ -101,7 +130,6 @@ class TimeFormatter extends TextInputFormatter {
     TextEditingValue oldValue,
     TextEditingValue newValue,
   ) {
-    // 숫자만 허용
     String newText = newValue.text.replaceAll(RegExp(r'[^0-9]'), '');
 
     // 최대 5자리까지만 허용 (HH:MM)
@@ -118,5 +146,15 @@ class TimeFormatter extends TextInputFormatter {
       text: newText,
       selection: TextSelection.collapsed(offset: newText.length),
     );
+  }
+}
+
+bool isValidTimeFormat(String time) {
+  try {
+    final format = DateFormat("HH:mm");
+    format.parseStrict(time); // 엄격한 파싱
+    return true;
+  } catch (e) {
+    return false;
   }
 }

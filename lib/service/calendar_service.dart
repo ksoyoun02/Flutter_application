@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:application/models/calendar_model.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -31,26 +29,22 @@ class ScheduleService {
     }
   }
 
-  Future<String> saveSchedules(CalendarModel scheduleData) async {
+  Future<Map<String, dynamic>> saveSchedules(CalendarModel scheduleData) async {
     // JSON 객체를 문자열로 변환
     String jsonString = json.encode(scheduleData.toJson());
 
-    try {
-      final response = await http.post(
-        Uri.parse('$apiUrl/saveSchedule'), // API URL
-        headers: {'Content-Type': 'application/json'},
-        body: jsonString,
-      );
-      if (response.statusCode == 200) {
-        // 요청 성공 시
-        print('일정이 서버에 저장되었습니다.');
-      } else {
-        // 요청 실패 시
-        throw Exception('저장에 실패했습니다. 서버 오류 발생');
-      }
-      return '일정이 저장되었습니다.';
-    } catch (e) {
-      return '오류 발생: $e';
+    final response = await http.post(
+      Uri.parse('$apiUrl/saveSchedule'), // API URL
+      headers: {'Content-Type': 'application/json'},
+      body: jsonString,
+    );
+
+    if (response.statusCode == 200) {
+      final responseData = jsonDecode(response.body);
+      return responseData;
+    } else {
+      // 요청 실패 시
+      throw Exception('저장에 실패했습니다. 서버 오류 발생');
     }
   }
 }

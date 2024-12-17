@@ -1,7 +1,7 @@
 class CalendarModel {
   int? id; // nullable
   String? title;
-  DateTime? eventDate;
+  String? eventDate;
   String? startTime;
   String? endTime;
   String? description;
@@ -21,9 +21,7 @@ class CalendarModel {
   CalendarModel.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         title = json['title'],
-        eventDate = json['event_DATE'] != null
-            ? DateTime.parse(json['event_DATE'])
-            : null,
+        eventDate = json['event_DATE'],
         startTime = json['start_TIME'].toString().substring(0, 5),
         endTime = json['end_TIME'].toString().substring(0, 5),
         description = json['description'],
@@ -34,7 +32,7 @@ class CalendarModel {
     return {
       'id': id,
       'title': title,
-      'event_DATE': eventDate?.toIso8601String(),
+      'event_DATE': eventDate,
       'start_TIME': startTime,
       'end_TIME': endTime,
       'description': description,

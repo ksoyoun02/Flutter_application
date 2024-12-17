@@ -163,17 +163,13 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
     String location = _locationController.text;
     String description = _descriptionController.text;
 
-    // 여기서 원하는 대로 데이터를 처리할 수 있습니다.
-    print('Title: $title');
-    print('eventDate: $eventDate');
-    print('Start Time: $startTime');
-    print('End Time: $endTime');
-    print('Place: $location');
-    print('Content: $description');
-
+    if (title.isEmpty) {
+    } else if (eventDate.isEmpty) {
+    } else if (startTime.isEmpty) {
+    } else if (endTime.isEmpty) {}
     CalendarModel scheduleData = CalendarModel(
       title: title,
-      eventDate: DateTime.parse(eventDate),
+      eventDate: eventDate.toString(),
       startTime: startTime,
       endTime: endTime,
       location: location,
