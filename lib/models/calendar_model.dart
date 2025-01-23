@@ -21,9 +21,9 @@ class CalendarModel {
   CalendarModel.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         title = json['title'],
-        eventDate = json['event_DATE'],
-        startTime = json['start_TIME'].toString().substring(0, 5),
-        endTime = json['end_TIME'].toString().substring(0, 5),
+        eventDate = json['eventDate'],
+        startTime = json['startTime'].toString().substring(0, 5),
+        endTime = json['endTime'].toString().substring(0, 5),
         description = json['description'],
         location = json['location'];
 
@@ -32,9 +32,9 @@ class CalendarModel {
     return {
       'id': id,
       'title': title,
-      'event_DATE': eventDate,
-      'start_TIME': startTime,
-      'end_TIME': endTime,
+      'eventDate': eventDate,
+      'startTime': startTime,
+      'endTime': endTime,
       'description': description,
       'location': location,
     };

@@ -6,10 +6,12 @@ import 'package:flutter/material.dart';
 
 class ScheduleBottomSheet extends StatefulWidget {
   final DateTime eventDate;
+  final VoidCallback? onSaved;
 
   const ScheduleBottomSheet({
     super.key,
     required this.eventDate,
+    this.onSaved,
   });
 
   @override
@@ -154,7 +156,7 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
     );
   }
 
-  void onSaveButton() {
+  void onSaveButton() async {
     // 각 TextEditingController에서 값을 가져옴
     String title = _titleController.text;
     String eventDate = _eventDateController.text;
@@ -164,18 +166,58 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
     String description = _descriptionController.text;
 
     if (title.isEmpty) {
-    } else if (eventDate.isEmpty) {
+      _showAlertDialog("일정 제목을 입력해주세요");
     } else if (startTime.isEmpty) {
-    } else if (endTime.isEmpty) {}
-    CalendarModel scheduleData = CalendarModel(
-      title: title,
-      eventDate: eventDate.toString(),
-      startTime: startTime,
-      endTime: endTime,
-      location: location,
-      description: description,
-    );
+      _showAlertDialog("시작 시간을 입력해주세요");
+    } else if (endTime.isEmpty) {
+      _showAlertDialog("종료 시간을 입력해주세요");
+    } else {
+      CalendarModel scheduleData = CalendarModel(
+        title: title,
+        eventDate: eventDate.toString(),
+        startTime: startTime,
+        endTime: endTime,
+        location: location,
+        description: description,
+      );
 
-    service.saveSchedules(scheduleData);
+      var result = await service.saveSchedules(scheduleData);
+
+      if (result['status'] == 1) {
+        Navigator.pop(context);
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('저장이 완료되었습니다!'),
+            backgroundColor: Colors.blue,
+            duration: Duration(seconds: 2), // 메시지 표시 시간
+          ),
+        );
+
+        if (widget.onSaved != null) {
+          widget.onSaved!();
+        }
+      } else {
+        _showAlertDialog(result['message']);
+      }
+    }
+  }
+
+  void _showAlertDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('알림'),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('확인'),
+            ),
+          ],
+        );
+      },
+    );
   }
 }

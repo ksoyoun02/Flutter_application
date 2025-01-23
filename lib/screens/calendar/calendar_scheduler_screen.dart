@@ -29,7 +29,6 @@ class _CalendarSchedulerScreenState extends State<CalendarSchedulerScreen> {
   @override
   void initState() {
     super.initState();
-
     _loadSchedules(selectedDate);
   }
 
@@ -43,6 +42,24 @@ class _CalendarSchedulerScreenState extends State<CalendarSchedulerScreen> {
     }).catchError((e) {
       print('Error loading schedules: $e');
     });
+  }
+
+  void _showAlertDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('알림'),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('확인'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -64,8 +81,8 @@ class _CalendarSchedulerScreenState extends State<CalendarSchedulerScreen> {
                     padding: const EdgeInsets.only(
                         left: 8, right: 8, top: 8, bottom: 8),
                     child: ScheduleBottomSheet(
-                      eventDate: selectedDate,
-                    ),
+                        eventDate: selectedDate,
+                        onSaved: () => _loadSchedules(selectedDate)),
                   ),
                 ),
               );
@@ -89,36 +106,54 @@ class _CalendarSchedulerScreenState extends State<CalendarSchedulerScreen> {
               height: 5.0,
             ),
             Expanded(
-                child: FutureBuilder<List<CalendarModel>>(
-                    future: _schedulesFuture,
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      } else if (snapshot.hasError) {
-                        return Center(
-                          child: Text('Error: ${snapshot.error}'),
-                        );
-                      } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                        return const Center(
-                          child: Text('No schedules available.'),
-                        );
-                      } else {
-                        final schedules = snapshot.data!;
-                        return SingleChildScrollView(
-                          child: Column(
-                            children: schedules
-                                .map((schedule) => ScheduleCard(
-                                      startTime: schedule.startTime!,
-                                      endTime: schedule.endTime!,
-                                      title: schedule.title!,
-                                    ))
-                                .toList(),
-                          ),
-                        );
-                      }
-                    })),
+              child: FutureBuilder<List<CalendarModel>>(
+                future: _schedulesFuture,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  } else if (snapshot.hasError) {
+                    return Center(
+                      child: Text('Error: ${snapshot.error}'),
+                    );
+                  } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                    return const Center(
+                      child: Text('No schedules available.'),
+                    );
+                  } else {
+                    final schedules = snapshot.data!;
+                    return SingleChildScrollView(
+                      child: Column(
+                        children: schedules.map((schedule) {
+                          return Dismissible(
+                            key: Key(schedule.id.toString()), // 고유 키 설정
+                            direction:
+                                DismissDirection.endToStart, // 왼쪽으로 밀기만 허용
+                            background: Container(
+                              color: Colors.red,
+                              alignment: Alignment.centerRight,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
+                              child:
+                                  const Icon(Icons.delete, color: Colors.white),
+                            ),
+                            onDismissed: (direction) async {
+                              deleteSchdule(schedule.id!);
+                            },
+                            child: ScheduleCard(
+                              startTime: schedule.startTime!,
+                              endTime: schedule.endTime!,
+                              title: schedule.title!,
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    );
+                  }
+                },
+              ),
+            ),
             const SizedBox(
               height: 5.0,
             ),
@@ -128,11 +163,30 @@ class _CalendarSchedulerScreenState extends State<CalendarSchedulerScreen> {
     );
   }
 
-  void onDaySelected(DateTime selectedDate, DateTime forcusedDate) {
-    _loadSchedules(selectedDate);
-
+  void onDaySelected(DateTime selectedDay, DateTime focusedDay) {
     setState(() {
-      this.selectedDate = selectedDate;
+      selectedDate = selectedDay;
     });
+    _loadSchedules(selectedDate);
+  }
+
+  void deleteSchdule(int id) async {
+    CalendarModel scheduleData = CalendarModel(id: id);
+
+    var result = await service.deleteSchedules(scheduleData);
+
+    if (result['status'] == 1) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('일정이 삭제되었습니다.'),
+          backgroundColor: Colors.blue,
+          duration: Duration(seconds: 2), // 메시지 표시 시간
+        ),
+      );
+
+      _loadSchedules(selectedDate);
+    } else {
+      _showAlertDialog(result['message']);
+    }
   }
 }

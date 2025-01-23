@@ -1,5 +1,4 @@
 import 'package:application/screens/blog/blog_screen.dart';
-import 'package:application/screens/calendar/calendar_main_screen.dart';
 import 'package:application/screens/calendar/calendar_scheduler_screen.dart';
 import 'package:application/screens/choolCheck/chool_check_screen.dart';
 import 'package:application/screens/d_day/d_day_screen.dart';

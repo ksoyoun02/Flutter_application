@@ -1,16 +1,8 @@
-# application
+# 빌드파일, 서드 파티 라이브러리, 캐시파일 삭제
+flutter clean
 
-A new Flutter project.
+# 재설치
+flutter pub get
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# 모바일로 접속시
+flutter run -d web-server --web-port 8090 --web-hostname 0.0.0.0 
