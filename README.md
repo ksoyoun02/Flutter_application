@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-# 빌드파일, 서드 파티 라이브러리, 캐시파일 삭제
-flutter clean
-
-# 재설치
-flutter pub get
-
-# 모바일로 접속시
-flutter run -d web-server --web-port 8090 --web-hostname 0.0.0.0 
-=======
 ![banner](https://capsule-render.vercel.app/api?type=waving&color=0:fd947f,100:fa72e2&height=220&text=My%20Flutter%20Project&fontSize=50&fontColor=fff)
 
 ## 📌 프로젝트 소개
@@ -36,5 +26,3 @@ flutter run -d web-server --web-port 8090 --web-hostname 0.0.0.0
 ---
 
 ## 📂 프로젝트 구조
-
->>>>>>> e4f07aecf9971acd9061bb4d7169b695a03ebc7b
