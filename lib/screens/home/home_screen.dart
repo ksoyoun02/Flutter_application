@@ -138,18 +138,10 @@ class HomeScreen extends StatelessWidget {
                                 cardTitle: "Scheduler",
                                 iconData: Icons.calendar_month_outlined,
                                 linkPage: "calendarScheduler"),
-                          ],
-                        ),
-                        Row(
-                          children: [
                             MenuWidget(
                                 cardTitle: "Timer",
                                 iconData: Icons.timer_sharp,
                                 linkPage: "timer"),
-                            MenuWidget(
-                                cardTitle: "Calendar",
-                                iconData: Icons.calendar_month_outlined,
-                                linkPage: "calendar"),
                           ],
                         ),
                       ],
