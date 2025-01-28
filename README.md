@@ -1,7 +1,8 @@
-![banner](https://capsule-render.vercel.app/api?type=waving&color=0:fd947f,100:fa72e2&height=220&text=My%20Flutter%20Project&fontSize=50&fontColor=fff)
+![banner](https://capsule-render.vercel.app/api?type=waving&color=0:fd947f,100:fa72e2&height=220&text=My%20Flutter%20Project&fontSize=50&fontColor=fff&section=header)
 
 ## 📌 프로젝트 소개
 이 프로젝트는 **코드팩토리의 플러터 프로그래밍 도서를 학습하며 구현한 flutter 앱**입니다.
+
 Flutter의 기본 개념과 주요 기능을 익히는 데 초점을 맞췄으며, 학습한 내용을 바탕으로 직접 기능을 추가하며 앱의 완성도를 높였습니다.
 
 ---
@@ -75,3 +76,7 @@ lib/
 데이터 저장
 SQLite 또는 백엔드 API를 연동하여 데이터를 관리합니다.
 </details>
+
+
+
+![banner](https://capsule-render.vercel.app/api?type=waving&color=0:fd947f,100:fa72e2&height=220&text=My%20Flutter%20Project&fontSize=50&fontColor=fff&section=footer)
