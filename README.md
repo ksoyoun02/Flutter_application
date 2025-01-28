@@ -63,20 +63,35 @@ lib/
 
 ---
 ## 📂 메인 Page
+<table>
+  <tr>
+    <td style="width: 50%; text-align: center;">
+      <img src="/asset/projectImg/main.png" alt="easyme" style="width: 90%; max-width: 400px;">
+    </td>
+    <td style="width: 50%; padding: 10px;">
+      <h3>프로젝트 메인 페이지</h3>
+      <p>
+        이 페이지는 프로젝트의 메인 화면을 보여줍니다.  
+        사용자는 여기에서 주요 기능을 확인할 수 있으며,  
+        직관적인 UI로 쉽게 탐색할 수 있습니다.
+      </p>
+    </td>
+  </tr>
+</table>
 
-
-<details> <summary><b>🚀 1.</b> (클릭하여 펼치기)</summary>
-할 일 관리
-사용자가 할 일을 추가, 삭제, 수정할 수 있습니다.
-상태 변경(예: 완료, 미완료)을 지원합니다.
-검색 및 필터링
-키워드 기반 검색 및 상태별 필터링 기능 제공.
-반응형 UI
-모바일 및 데스크톱에서도 최적화된 레이아웃을 지원합니다.
-데이터 저장
-SQLite 또는 백엔드 API를 연동하여 데이터를 관리합니다.
+<details> 
+    <summary><b>🚀 1.</b> (클릭하여 펼치기)</summary>
+    할 일 관리
+    사용자가 할 일을 추가, 삭제, 수정할 수 있습니다.
+    상태 변경(예: 완료, 미완료)을 지원합니다.
+    검색 및 필터링
+    키워드 기반 검색 및 상태별 필터링 기능 제공.
+    반응형 UI
+    모바일 및 데스크톱에서도 최적화된 레이아웃을 지원합니다.
+    데이터 저장
+    SQLite 또는 백엔드 API를 연동하여 데이터를 관리합니다.
 </details>
 
 
 
-![banner](https://capsule-render.vercel.app/api?type=waving&color=0:fd947f,100:fa72e2&height=220&text=My%20Flutter%20Project&fontSize=50&fontColor=fff&section=footer)
+![banner](https://capsule-render.vercel.app/api?type=waving&color=0:fd947f,100:fa72e2&height=220&section=footer)
