@@ -62,34 +62,34 @@ lib/
 
 
 ---
-## 📂 메인 Page
+## 📂 프로젝트 메인 페이지
 <table>
   <tr>
-    <td style="width: 50%; text-align: center;">
-      <img src="/asset/projectImg/main.png" alt="easyme" style="width: 90%; max-width: 400px;">
+    <td width="35%" align="center">
+      <img src="/asset/projectImg/main.png" alt="easyme" width="200">
     </td>
-    <td style="width: 50%; padding: 10px;">
-      <h3>프로젝트 메인 페이지</h3>
-      <p>
-        이 페이지는 프로젝트의 메인 화면을 보여줍니다.  
-        사용자는 여기에서 주요 기능을 확인할 수 있으며,  
-        직관적인 UI로 쉽게 탐색할 수 있습니다.
-      </p>
+    <td width="65%">
+      <h4>프로젝트 메인 페이지</h4>
+      <p>화면 상단에는 사용자 정보가 보여지며, 하단은 메뉴 리스트로 구성됩니다.</p>
+      <p>사용자 정보는 화면에 고정되며, 메뉴는 SingleChildScrollView 위젯을 사용하여 스크롤이 가능하도록 구현하였습니다.</p>
     </td>
   </tr>
 </table>
 
+
 <details> 
-    <summary><b>🚀 1.</b> (클릭하여 펼치기)</summary>
-    할 일 관리
-    사용자가 할 일을 추가, 삭제, 수정할 수 있습니다.
-    상태 변경(예: 완료, 미완료)을 지원합니다.
-    검색 및 필터링
-    키워드 기반 검색 및 상태별 필터링 기능 제공.
-    반응형 UI
-    모바일 및 데스크톱에서도 최적화된 레이아웃을 지원합니다.
-    데이터 저장
-    SQLite 또는 백엔드 API를 연동하여 데이터를 관리합니다.
+    <summary><b>🚀 1. Blog</b> (클릭하여 펼치기)</summary>
+    <table>
+      <tr>
+        <td width="35%" align="center">
+          <img src="/asset/projectImg/blog.png" alt="blog" width="200">
+        </td>
+        <td width="65%">
+          <h4>Blog Page</h4>
+          <p>test</p>
+        </td>
+      </tr>
+    </table>
 </details>
 
 
