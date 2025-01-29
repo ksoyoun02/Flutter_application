@@ -88,17 +88,17 @@ lib/
                 <h5>✨ 주요 기능</h5>
                 <p>MySQL 데이터베이스와 연동하여 CRUD 기능을 구현한 일정 관리 앱입니다.</p>
                 <ul>
-                <li>1️⃣ 달력 기반 일정 조회</li>
-                <p>한 달 동안 등록된 일정이 있는 날짜는 빨간 원으로 표시됩니다.</p>
-                <p> 날짜를 클릭하면 해당 날짜의 일정이 리스트로 나타납니다.</p>
-                <li>2️⃣ CRUD (생성, 조회, 수정, 삭제)</li>
-                <p>일정 추가: 일정 제목과 내용을 입력 후 저장하면 자동으로 해당 날짜에 추가됩니다.</p>
-                <p>일정 조회: 선택한 날짜에 맞는 일정만 화면에 표시됩니다.</p>
-                <p>일정 수정: 기존 일정을 클릭하여 내용을 수정할 수 있습니다.</p>
-                <p>일정 삭제: 일정을 왼쪽으로 슬라이드하면 일정이 삭제됩니다. 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                </p>
+                    <li>1️⃣ 달력 기반 일정 조회</li>
+                        <p>한 달 동안 등록된 일정이 있는 날짜는 빨간 원으로 표시됩니다.</p>
+                        <p> 날짜를 클릭하면 해당 날짜의 일정이 리스트로 나타납니다.</p>
+                    <li>2️⃣ CRUD (생성, 조회, 수정, 삭제)</li>
+                        <p>일정 추가: 일정 제목과 내용을 입력 후 저장하면 자동으로 해당 날짜에 추가됩니다.</p>
+                        <p>일정 조회: 선택한 날짜에 맞는 일정만 화면에 표시됩니다.</p>
+                        <p>일정 수정: 기존 일정을 클릭하여 내용을 수정할 수 있습니다.</p>
+                        <p>일정 삭제: 일정을 왼쪽으로 슬라이드하면 일정이 삭제됩니다. 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    </p>
                 </ul>
             </td>
         </tr>
@@ -115,17 +115,49 @@ lib/
             <td width="65%">
                 <h4>📝 블로그 웹 앱</h4>
                 <h5>✨ 주요 기능</h5>
-                <p>웹뷰 위젯을 사용하여 앱에서 웹브라우저의 기능을 구현하였습니다.</p>
-                <p>AppBar : 웹뷰 컨트롤러를 사용하여 뒤로가기 버튼과 홈버튼을 구현하였습니다.</p>
-                <p>WebView : 기본 url을 티스토리 블로그로 설정하여 해당 웹사이트를 화면에 보여주었습니다.
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </p>
+                <ul>
+                    <p>웹뷰 위젯을 사용하여 앱에서 웹브라우저의 기능을 구현하였습니다.</p>
+                    <li>1️⃣ AppBar</li>
+                    <p>웹뷰 컨트롤러를 사용하여 뒤로가기 버튼과 홈버튼을 구현하였습니다.</p>
+                    <li>2️⃣ WebView</li>
+                    <p>기본 url을 티스토리 블로그로 설정하여 해당 웹사이트를 화면에 보여주었습니다.
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </p>
+                </ul>
             </td>
         </tr>
     </table>
 </details>
 
-
+<details> 
+    <summary><b>⏲️ 3. Timer</b></summary>
+    <table>
+        <tr>
+            <td width="25%" align="center">
+              <img src="/asset/projectImg/timer.png" alt="easyme" width="200">
+            </td>
+            <td width="25%" align="center">
+              <img src="/asset/projectImg/stop.png" alt="easyme" width="200">
+            </td>
+            <td width="50%">
+                <h4>⏲️ 타이머 / 스탑워치앱</h4>
+                <h5>✨ 주요 기능</h5>
+                <ul>
+                    <p>TabBarView 위젯을 사용한 탭 기능과, 타이머 / 스탑워치 기능을 구현하였습니다.</p>
+                    <li>1️⃣ Timer</li>
+                    <p>CircularCountDownTimer 패키지를 사용하여 Timer앱을 구현하였으며, 
+                    CountDownController를 사용하여 타이머 시작 / 일시정지 / 재시작 기능을 구현하였습니다.
+                    </p>
+                    <li>2️⃣ Stop Watch</li>
+                    <p>stop_watch_timer 패키지를 사용하여 Stop Watch앱을 구현하였으며,
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </p>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</details>
 
 ![banner](https://capsule-render.vercel.app/api?type=waving&color=0:fd947f,100:fa72e2&height=220&section=footer)
