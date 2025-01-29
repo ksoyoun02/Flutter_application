@@ -85,8 +85,8 @@ lib/
             </td>
             <td width="65%">
                 <h4>📅 일정관리 앱</h4>
-                <h5>✨ 주요 기능</h5>
                 <p>MySQL 데이터베이스와 연동하여 CRUD 기능을 구현한 일정 관리 앱입니다.</p>
+                <h5>✨ 주요 기능</h5>
                 <ul>
                     <li>1️⃣ 달력 기반 일정 조회</li>
                         <p>한 달 동안 등록된 일정이 있는 날짜는 빨간 원으로 표시됩니다.</p>
@@ -116,11 +116,11 @@ lib/
                 <h4>📝 블로그 웹 앱</h4>
                 <h5>✨ 주요 기능</h5>
                 <ul>
-                    <p>웹뷰 위젯을 사용하여 앱에서 웹브라우저의 기능을 구현하였습니다.</p>
+                    <p>웹뷰 위젯을 사용하여 앱 내에서 웹브라우저의 기능을 구현하였습니다.</p>
                     <li>1️⃣ AppBar</li>
-                    <p>웹뷰 컨트롤러를 사용하여 뒤로가기 버튼과 홈버튼을 구현하였습니다.</p>
+                    <p>웹뷰 컨트롤러를 사용해 뒤로가기 버튼과 홈버튼을 구현하였습니다.</p>
                     <li>2️⃣ WebView</li>
-                    <p>기본 url을 티스토리 블로그로 설정하여 해당 웹사이트를 화면에 보여주었습니다.
+                    <p>기본 URL을 티스토리 블로그로 설정하여 해당 웹사이트를 앱 내에서 직접 확인할 수 있습니다.
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </p>
@@ -141,19 +141,23 @@ lib/
               <img src="/asset/projectImg/stop.png" alt="easyme" width="200">
             </td>
             <td width="50%">
-                <h4>⏲️ 타이머 / 스탑워치앱</h4>
+                <h4>⏱ 타이머 / 스톱워치 앱</h4>
+                <p>이 앱은 Flutter에서 stop_watch_timer 패키지를 사용하여 스톱워치 기능을 구현한 앱입니다.</p>
                 <h5>✨ 주요 기능</h5>
                 <ul>
-                    <p>TabBarView 위젯을 사용한 탭 기능과, 타이머 / 스탑워치 기능을 구현하였습니다.</p>
-                    <li>1️⃣ Timer</li>
-                    <p>CircularCountDownTimer 패키지를 사용하여 Timer앱을 구현하였으며, 
-                    CountDownController를 사용하여 타이머 시작 / 일시정지 / 재시작 기능을 구현하였습니다.
-                    </p>
-                    <li>2️⃣ Stop Watch</li>
-                    <p>stop_watch_timer 패키지를 사용하여 Stop Watch앱을 구현하였으며,
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </p>
+                    <li>1️⃣ 시간 측정 및 표시</li>
+                    <li>2️⃣ 조작 버튼</li>
+                        <ul>
+                            <li>시작/정지 버튼 (FloatingActionButton)</li>
+                            <p>스톱워치가 실행 중이면 정지, 멈춰있으면 시작할 수 있습니다.</p>
+                            <li>랩 타임 저장 버튼 (FloatingActionButton)</li>
+                            <p>현재 측정된 시간을 저장하며, 최대 20개까지 기록할 수 있습니다. 초과 시 가장 오래된 기록이 삭제됩니다.</p>
+                            <li>리셋 버튼 (FloatingActionButton)</li>
+                            <p>스톱워치 시간을 초기화하고 저장된 랩 타임 목록을 삭제합니다.</p>
+                        </ul>
+                    <li>3️⃣ 자동 스크롤 기능</li>
+                    <p>앱이 빌드된 후 리스트를 자동으로 최하단으로 이동시킵니다.</p>
+                    <p>랩 타임이 추가될 때도 리스트의 마지막 항목이 자동으로 보이도록 처리합니다.</p>
                 </ul>
             </td>
         </tr>
