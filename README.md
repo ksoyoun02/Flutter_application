@@ -76,19 +76,20 @@ lib/
   </tr>
 </table>
 
-
 <details> 
-    <summary><b>🚀 1. Blog</b> (클릭하여 펼치기)</summary>
+    <summary><b>🚀 1. Blog</b></summary>
     <table>
-      <tr>
-        <td width="35%" align="center">
-          <img src="/asset/projectImg/blog.png" alt="blog" width="200">
-        </td>
-        <td width="65%">
-          <h4>Blog Page</h4>
-          <p>test</p>
-        </td>
-      </tr>
+        <tr>
+            <td width="35%" align="center">
+              <img src="/asset/projectImg/blog.png" alt="easyme" width="200">
+            </td>
+            <td width="65%">
+                <h4>블로그 웹 앱</h4>
+                <p>웹뷰 위젯을 사용하여 앱에서 웹브라우저의 기능을 구현하였습니다.</p>
+                <p>AppBar : 웹뷰 컨트롤러를 사용하여 홈버튼 구현, 웹뷰 제어</p>
+                <p>WebView : 기본 url을 티스토리 블로그로 설정</p>
+            </td>
+        </tr>
     </table>
 </details>
 
