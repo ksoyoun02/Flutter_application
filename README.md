@@ -86,8 +86,11 @@ lib/
             <td width="65%">
                 <h4>블로그 웹 앱</h4>
                 <p>웹뷰 위젯을 사용하여 앱에서 웹브라우저의 기능을 구현하였습니다.</p>
-                <p>AppBar : 웹뷰 컨트롤러를 사용하여 홈버튼 구현, 웹뷰 제어</p>
-                <p>WebView : 기본 url을 티스토리 블로그로 설정</p>
+                <p>AppBar : 웹뷰 컨트롤러를 사용하여 뒤로가기 버튼과 홈버튼을 구현하였습니다.                </p>
+                <p>WebView : 기본 url을 티스토리 블로그로 설정하여 해당 웹사이트를 화면에 보여주었습니다.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </p>
             </td>
         </tr>
     </table>
