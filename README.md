@@ -148,16 +148,143 @@ lib/
                     <li>1️⃣ 시간 측정 및 표시</li>
                     <li>2️⃣ 조작 버튼</li>
                         <ul>
-                            <li>시작/정지 버튼 (FloatingActionButton)</li>
+                            <li>시작/정지 버튼</li>
                             <p>스톱워치가 실행 중이면 정지, 멈춰있으면 시작할 수 있습니다.</p>
-                            <li>랩 타임 저장 버튼 (FloatingActionButton)</li>
+                            <li>랩 타임 저장 버튼</li>
                             <p>현재 측정된 시간을 저장하며, 최대 20개까지 기록할 수 있습니다. 초과 시 가장 오래된 기록이 삭제됩니다.</p>
-                            <li>리셋 버튼 (FloatingActionButton)</li>
+                            <li>리셋 버튼</li>
                             <p>스톱워치 시간을 초기화하고 저장된 랩 타임 목록을 삭제합니다.</p>
                         </ul>
                     <li>3️⃣ 자동 스크롤 기능</li>
                     <p>앱이 빌드된 후 리스트를 자동으로 최하단으로 이동시킵니다.</p>
                     <p>랩 타임이 추가될 때도 리스트의 마지막 항목이 자동으로 보이도록 처리합니다.</p>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</details>
+
+<details> 
+    <summary><b>💖 4. D-Day</b></summary>
+    <table>
+        <tr>
+            <td width="25%" align="center">
+              <img src="/asset/projectImg/dday.png" alt="easyme" width="200">
+            </td>
+            <td width="25%" align="center">
+              <img src="/asset/projectImg/dday2.png" alt="easyme" width="200">
+            </td>
+            <td width="50%">
+                <h4>💖 디데이 앱</h4>
+                <p>이 앱은 사용자가 특정 날짜를 선택하면, 그 날짜를 기준으로 D+일수를 표시하는 기능을 구현한 앱입니다.</p>
+                <h5>✨ 주요 기능</h5>
+                <ul>
+                    <li>1️⃣ 날짜 선택 기능</li>
+                    <li>2️⃣ D-Day 계산 기능</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</details>
+
+<details> 
+    <summary><b>🎲 5. Dice</b></summary>
+    <table>
+        <tr>
+            <td width="25%" align="center">
+              <img src="/asset/projectImg/dice.png" alt="easyme" width="200">
+            </td>
+            <td width="25%" align="center">
+              <img src="/asset/projectImg/dice2.png" alt="easyme" width="200">
+            </td>
+            <td width="50%">
+                <h4>🎲 다이스 앱</h4>
+                <p>이 앱은 shake 패키지를 사용하여 사용자가 디바이스를 흔들면 주사위를 굴리는 기능과
+                    설정을 통해 민감도를 조절 가능한 기능을 구현한 앱입니다.</p>
+                <h5>✨ 주요 기능</h5>
+                <ul>
+                    <li>1️⃣ 주사위 굴리기</li>
+                    <p>디바이스를 흔들면 주사위가 굴러가며, onPhoneShake()에서 난수를 생성하여 주사위 숫자를 변경, 숫자에 맞는 이미지를 가져옵니다.</p>
+                    <li>2️⃣ 민감도 설정 기능</li>
+                    <p>shakeThresholdGravity: 가속도 센서 감도 조절(설정 화면에서 변경 가능)</p>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</details>
+
+<details> 
+    <summary><b>📍 6. Map</b></summary>
+    <table>
+        <tr>
+            <td width="25%" align="center">
+              <img src="/asset/projectImg/map.png" alt="easyme" width="200">
+            </td>
+            <td width="25%" align="center">
+              <img src="/asset/projectImg/map2.png" alt="easyme" width="200">
+            </td>
+            <td width="50%">
+                <h4>📍 출석체크 앱</h4>
+                <p>이 앱은 Google Maps와 Geolocator 패키지를 사용하여 사용자의 위치를 확인하고, 
+                    지정된 회사 위치에서 100m 이내에 있을 경우 출근 체크를 할 수 있도록 하는 기능을 구현한 앱입니다.</p>
+                <h5>✨ 주요 기능</h5>
+                <ul>
+                    <li>1️⃣ 회사 위치 및 지도 표시</li>
+                    <p>설정한 GPS좌표의 위치를 마커로 표시합니다. 반경 100m를 나타내는 원이 마커 주변에 추가됩니다.</p>
+                    <li>2️⃣ 위치 권한 확인</li>
+                    <p>위치 권한이 부여되었는지 확인하고, 없으면 요청합니다.</p>
+                    <li>3️⃣ 출근 버튼</li>
+                    <p>현재 위치를 가져오며, 회사와 거리가 100m 이내이면 출근버튼 활성화되고 아닌경우 출근불가 메세지가 표시됩니다.</p>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</details>
+
+<details> 
+    <summary><b>📷 7. image / editor</b></summary>
+    <table>
+        <tr>
+            <td width="25%" align="center">
+              <img src="/asset/projectImg/img.png" alt="easyme" width="200">
+            </td>
+            <td width="25%" align="center">
+              <img src="/asset/projectImg/editor.png" alt="easyme" width="200">
+            </td>
+            <td width="50%">
+                <h4>📷 이미지 뷰어 / 편집 앱</h4>
+                <p>이 앱은 이미지 뷰어 앱과, 이미지에 스티커를 붙일 수 있는 에디터 기능을 구현한 앱입니다.</p>
+                <h5>✨ 주요 기능</h5>
+                <ul>
+                    <li>1️⃣ 이미지 뷰어</li>
+                    <p>PageController, timer로 자동 슬라이드 뷰어를 구현하였습니다.</p>
+                    <li>2️⃣ 이미지 편집 앱</li>
+                    <p>이미지 선택 후 이모티콘 스티커를 추가하고 편집된 이미지를 저장할 수 있는 기능을 구현한 앱입니다.</p>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</details>
+
+<details> 
+    <summary><b>📽️ 8. video / youtube</b></summary>
+    <table>
+        <tr>
+            <td width="25%" align="center">
+              <img src="/asset/projectImg/video2.png" alt="easyme" width="200">
+            </td>
+            <td width="25%" align="center">
+              <img src="/asset/projectImg/youtube.png" alt="easyme" width="200">
+            </td>
+            <td width="50%">
+                <h4>📽️ 비디오 뷰어 / 유튜브 api 앱</h4>
+                <p>이 앱은 비디오 뷰어 앱과, 유튜브 실행 기능을 구현한 앱입니다.</p>
+                <h5>✨ 주요 기능</h5>
+                <ul>
+                    <li>1️⃣ 비디오 뷰어</li>
+                    <p>갤러리에서 비디오를 선택하고, 선택된 비디오를 CustomVideoPlayer 위젯을 사용해 재생할 수 있습니다.</p>
+                    <li>2️⃣ 유튜브 영상 재생 앱</li>
+                    <p>유튜브 API 요청을 통해 return 받은 List를 화면에 표시합니다. 클릭 시 재생할 수 있습니다.</p>
                 </ul>
             </td>
         </tr>
