@@ -81,13 +81,13 @@ lib/
     <table>
         <tr>
             <td width="35%" align="center">
-              <img src="/asset/projectImg/calendar.png" alt="calendar-app" width="200">
+              <img src="/asset/projectImg/calendar.png" alt="calendar-app" width="205">
             </td>
             <td width="35%" align="center">
-              <img src="/asset/projectImg/calendar2.png" alt="calendar-app" width="200">
+              <img src="/asset/projectImg/calendar2.png" alt="calendar-app" width="210">
             </td>
             <td width="40%" align="center">
-              <img src="/asset/projectImg/calendar3.png" alt="calendar-app" width="200">
+              <img src="/asset/projectImg/calendar3.png" alt="calendar-app" width="290">
             </td>
         </tr>
         <tr>
