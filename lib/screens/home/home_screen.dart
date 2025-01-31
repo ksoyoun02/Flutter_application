@@ -87,9 +87,9 @@ class HomeScreen extends StatelessWidget {
                                 iconData: Icons.web_rounded,
                                 linkPage: "blog"),
                             MenuWidget(
-                                cardTitle: "Img",
-                                iconData: Icons.image_outlined,
-                                linkPage: "img"),
+                                cardTitle: "Scheduler",
+                                iconData: Icons.calendar_month_outlined,
+                                linkPage: "calendarScheduler"),
                           ],
                         ),
                         Row(
@@ -99,25 +99,21 @@ class HomeScreen extends StatelessWidget {
                                 iconData: Icons.favorite_border,
                                 linkPage: "dday"),
                             MenuWidget(
-                                cardTitle: "Dice",
-                                icon: Icon(
-                                  FontAwesomeIcons.dice,
-                                  size: 60,
-                                  color: Color.fromARGB(255, 107, 105, 228),
-                                ),
-                                linkPage: "dice"),
+                                cardTitle: "Timer",
+                                iconData: Icons.timer_sharp,
+                                linkPage: "timer"),
                           ],
                         ),
                         Row(
                           children: [
                             MenuWidget(
-                                cardTitle: "Video",
-                                iconData: Icons.videocam,
-                                linkPage: "video"),
-                            MenuWidget(
                                 cardTitle: "Map Check",
                                 iconData: Icons.gps_fixed_outlined,
                                 linkPage: "choolCheck"),
+                            MenuWidget(
+                                cardTitle: "Video",
+                                iconData: Icons.videocam,
+                                linkPage: "video"),
                           ],
                         ),
                         Row(
@@ -135,13 +131,17 @@ class HomeScreen extends StatelessWidget {
                         Row(
                           children: [
                             MenuWidget(
-                                cardTitle: "Scheduler",
-                                iconData: Icons.calendar_month_outlined,
-                                linkPage: "calendarScheduler"),
+                                cardTitle: "Img",
+                                iconData: Icons.image_outlined,
+                                linkPage: "img"),
                             MenuWidget(
-                                cardTitle: "Timer",
-                                iconData: Icons.timer_sharp,
-                                linkPage: "timer"),
+                                cardTitle: "Dice",
+                                icon: Icon(
+                                  FontAwesomeIcons.dice,
+                                  size: 60,
+                                  color: Color.fromARGB(255, 107, 105, 228),
+                                ),
+                                linkPage: "dice"),
                           ],
                         ),
                       ],
