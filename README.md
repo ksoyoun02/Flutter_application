@@ -81,9 +81,17 @@ lib/
     <table>
         <tr>
             <td width="35%" align="center">
-              <img src="/asset/projectImg/blog.png" alt="calendar-app" width="200">
+              <img src="/asset/projectImg/calendar.png" alt="calendar-app" width="200">
             </td>
-            <td width="65%">
+            <td width="35%" align="center">
+              <img src="/asset/projectImg/calendar2.png" alt="calendar-app" width="200">
+            </td>
+            <td width="40%" align="center">
+              <img src="/asset/projectImg/calendar3.png" alt="calendar-app" width="200">
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" colspan="3">
                 <h4>📅 일정관리 앱</h4>
                 <p>MySQL 데이터베이스와 연동하여 CRUD 기능을 구현한 일정 관리 앱입니다.</p>
                 <h5>✨ 주요 기능</h5>
